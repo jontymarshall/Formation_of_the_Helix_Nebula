@@ -17,10 +17,10 @@ plt.rcParams["figure.figsize"] = [10, 8]
 plt.rcParams["figure.autolayout"] = True
 
 
-direc = '/Users/jonty/mydata/fearless/helix/image_grid/'
+direc = '../'
 
 #Read in Herschel PACS image
-hdul = fits.open(direc+'../herschel/Archive/helix_ksu_hppjsmapb.fits')
+hdul = fits.open(direc+'../data/imaging/herschel/pi_su/helix_ksu_hppjsmapb.fits')
 herschel_obsvn  = hdul[1].data
 cy = 128
 cx = 164

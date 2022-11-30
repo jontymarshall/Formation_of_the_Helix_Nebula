@@ -16,14 +16,15 @@ from astropy.io import fits
 import scipy as sp
 from scipy.ndimage import filters
 
-direc = '/Users/jonty/mydata/fearless/helix/image_grid/'
+#Output into the directory beneath this one
+direc = '../'
 
-#Read in big Herschel PACS image
+#Matplotlib parameters
 plt.rcParams["figure.figsize"] = [8,12]
 plt.rcParams["figure.autolayout"] = False
 
 pixscale = 1.6
-hdul = fits.open(direc+'../herschel/Archive/helix_kpgt_hppjsmapb.fits')
+hdul = fits.open(direc+'../data/imaging/herschel/kpgt/helix_kpgt_hppjsmapb.fits')
 herschel_obsvn2  = hdul[1].data
 cy = 909
 cx = 1213
@@ -31,7 +32,7 @@ dn = 187
 herschel_obsvn2 = herschel_obsvn2[cx-dn:cx+dn+1,cy-dn:cy+dn+1] #in Jy/pixel
 herschel_obsvn2 *= 1e3 / 1.6**2 #in mJy/arcsec**2
 
-
+#Smooth image to reduce noise
 herschel_obsvn2 = filters.gaussian_filter(herschel_obsvn2, 1.6875, mode='constant')
 
 fig,ax = plt.subplots()

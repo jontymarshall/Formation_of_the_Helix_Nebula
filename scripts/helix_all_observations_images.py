@@ -13,22 +13,23 @@ from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import numpy as np
 from astropy.io import fits
 
-direc = '/Users/jonty/mydata/fearless/helix/image_grid/'
+#Output to the directory below this one
+direc = '../'
 
-#Read in big Herschel PACS image
+#Plot parameters
 plt.rcParams["figure.figsize"] = [8,10]
 plt.rcParams["figure.autolayout"] = True
 
 
 fig,ax = plt.subplots(2,2)
 
-#SPITZER
+#SPITZER beam parameters
 fwhm_maj = 6.0
 fwhm_min = 6.0
 pixscale = 2.45
 beam_ang = 0.0
 
-hdul = fits.open(direc+'../spitzer/mips/r4621056/ch1/pbcd/SPITZER_M1_4621056_0000_10_E6427898_maic.fits')
+hdul = fits.open(direc+'../data/imaging/spitzer/r4621056/ch1/pbcd/SPITZER_M1_4621056_0000_10_E6427898_maic.fits')
 spitzer_obsvn  = hdul[0].data
 cy = 509
 cx = 669
@@ -56,13 +57,13 @@ ax[0,0].add_patch(ellipse)
 cb = fig.colorbar(mappable=im,cax=axins1,orientation="horizontal",ticklocation='top')
 cb.set_label(r'Flux density (mJy/arcsec$^{2}$)', size=10)
 
-#SOFIA
+#SOFIA beam paramaters
 fwhm_maj = 3.0
 fwhm_min = 3.0
 pixscale = 1.0
 beam_ang = 0.0
 
-hdul = fits.open(direc+'../steve_data/sofia_2017-10-17_HA_F440/p5245/F0440_HA_IMA_0500543_HAWAHWPOpen_CRH_035-053.fits')
+hdul = fits.open(direc+'../data/imaging/sofia/p5245/F0440_HA_IMA_0500543_HAWAHWPOpen_CRH_035-053.fits')
 sofia_obsvn  = hdul[0].data
 cy = 109
 cx = 100
@@ -97,7 +98,7 @@ fwhm_min = 5.4
 pixscale = 1.6
 beam_ang = 0.0
 
-hdul = fits.open(direc+'../herschel/Archive/helix_ksu_hppjsmapb.fits')
+hdul = fits.open(direc+'../data/imaging/herschel/pi_su/helix_ksu_hppjsmapb.fits')
 herschel_obsvn  = hdul[1].data
 cy = 128
 cx = 163
@@ -131,7 +132,7 @@ fwhm_min = 0.229
 pixscale = 0.040
 beam_ang = 8.021694946289E+01
 beam_area = 4.*(fwhm_maj*fwhm_min)/(2*np.log(2))
-hdul = fits.open(direc+'../alma/WD2226-2_a_06_TE_cont.image.pbcor.fits')
+hdul = fits.open(direc+'../data/imaging/alma/WD2226-2_a_06_TE_cont.image.pbcor.fits')
 alma_obsvn  = hdul[0].data
 cy = 654
 cx = 656
