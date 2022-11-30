@@ -24,32 +24,14 @@ MEarth = 5.97237e24 # kg
 
 um = 1e-6 #for wavelengths in microns
 
-#Read in stelar photosphere, convert to ergs/cm2/s/A then save
-# direc = '/Users/jonty/mydata/fearless/helix/image_grid/'
-
-# spec = ascii.read(direc+'Helix_Stellar_Spectrum.txt')
-
-# print(spec)
-# spec_wave = np.asarray(spec['col1'].data)
-# spec_flux = np.asarray(spec['col4'].data)
-
-# spec_flux *= (2.99792458E-08 / (1e4*spec_wave)**2) * ((201*pc) / (0.024*rsol))**2
-# spec_wave *= 1e4
-
-# f = open("helix_photosphere_v2.txt", "w")
-# for i in range(0,len(spec_wave)): 
-#     f.write(str(spec_wave[i]) + '    ' + str(spec_flux[i])+'\n')
-# f.close()
-
-
-#Read in photometry from csv file
+#Read in compact component photometry from csv file
 converters = {'Wavelength': [ascii.convert_numpy(np.float32)],
               'Flux': [ascii.convert_numpy(np.float32)],
               'Uncertainty': [ascii.convert_numpy(np.float32)]}
 
-direc = '/Users/jonty/mydata/fearless/helix/image_grid/'
+direc = '../'
 
-data = ascii.read(direc+'helix_photometry.csv',converters=converters,format='csv')
+data = ascii.read(direc+'data/photometry/helix_compact_photometry.csv',converters=converters,format='csv')
 
 obs_l = data['Wavelength'].data
 obs_f = data['Flux'].data
