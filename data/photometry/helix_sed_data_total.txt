@@ -1,0 +1,11 @@
+#Wavelength (um), Flux density (mJy), Uncertainty (mJy), Reference
+#9 data points
+3.6      0.374     0.019        Su et al.
+4.5      0.241     0.024        Su et al.
+5.8      0.171     0.026        Su et al.
+70.0       224        33        Su et al.
+70.0       239        26        van de Steene et al.
+70.0       258        13        Su Herschel data
+160.0      237       237        Su et al.
+160.0      135       135        Su Herschel data
+250.0       60        60        van de Steene data

@@ -1,0 +1,4 @@
+#Wavelength (um), Flux density (mJy), Uncertainty (mJy), Reference
+#2 data points
+70.0      222       12        Su Herschel data
+160.0     120      120        Su Herschel data
