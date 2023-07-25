@@ -130,3 +130,11 @@ dmypy.json
 
 # MacOS stuff
 .DS_Store
+data/imaging/alma/.DS_Store
+data/imaging/herschel/.DS_Store
+data/imaging/sofia/.DS_Store
+models/.DS_Store
+models/.DS_Store
+data/imaging/sofia/.DS_Store
+data/imaging/herschel/.DS_Store
+data/imaging/alma/.DS_Store
